@@ -1,38 +1,25 @@
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="128" height="128" rx="28" fill="#0B1220"/>
+  <rect width="128" height="128" rx="28" fill="#0B0B0B"/>
 
-  <!-- Glow -->
-  <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="128" y2="128">
-      <stop offset="0%" stop-color="#00D4FF"/>
-      <stop offset="50%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#A855F7"/>
-    </linearGradient>
+  <!-- subtle frame -->
+  <rect x="10" y="10" width="108" height="108" rx="22"
+        stroke="white" opacity="0.06" stroke-width="2"/>
 
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+  <!-- Slight left optical adjustment -->
+  <g transform="translate(-7, 0)">
 
-  <!-- Circle soft glow -->
-  <circle cx="64" cy="64" r="44" fill="url(#grad)" opacity="0.15"/>
+    <!-- A (refined proportions) -->
+    <path d="M42 94L64 28H72L94 94H82L77 78H59L54 94H42Z"
+          fill="white"/>
 
-  <!-- A -->
-  <path d="M38 92L60 28H68L90 92H80L74 74H54L48 92H38Z"
-        fill="url(#grad)" filter="url(#glow)"/>
+    <!-- A inner cut (cleaner & sharper) -->
+    <path d="M62 68H74L68 48L62 68Z"
+          fill="#0B0B0B"/>
 
-  <path d="M56 62H72L64 40L56 62Z"
-        fill="#0B1220" opacity="0.6"/>
+  </g>
 
-  <!-- L -->
-  <path d="M84 28H94V78H84V28Z" fill="url(#grad)" filter="url(#glow)"/>
-  <path d="M84 78H106V92H84V78Z" fill="url(#grad)" filter="url(#glow)"/>
-
-  <!-- Shine line -->
-  <path d="M30 20C50 10 78 10 100 22" stroke="white" opacity="0.08" stroke-width="2"/>
+  <!-- subtle highlight arc -->
+  <path d="M30 32C48 20 76 18 102 34"
+        stroke="white" opacity="0.07" stroke-width="2"/>
 </svg>
